@@ -1,6 +1,7 @@
 # fast-api
 
-Fast api sever URL for this project - http://127.0.0.1:8000/docs
+Fast api sever URL for this project - [patient-overview](http://127.0.0.1:8000/docs)
+
 FastAPI is a modern, high performance web framework for building APIs with Python.
 
 # Starlette
@@ -34,6 +35,10 @@ In the context of a web application or API built with FastAPI,
 **HTTP Methods:**
 
 GET, POST, PUT, DELETE
+
+**HTTP status overview**
+
+[http-status-codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status)
 
 **Elaboration:**
 
