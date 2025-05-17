@@ -1,5 +1,7 @@
 # fast-api
 
+FastAPI is a modern, high performance web framework for building APIs with Python.
+
 # Starlette
 
 > A curated list of awesome projects, extensions, and resources for the Starlette ASGI framework/toolkit.
