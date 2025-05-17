@@ -1,5 +1,6 @@
 # fast-api
 
+Fast api sever URL for this project - http://127.0.0.1:8000/docs
 FastAPI is a modern, high performance web framework for building APIs with Python.
 
 # Starlette
