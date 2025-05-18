@@ -25,11 +25,6 @@ These packages have not been vetted or approved by the pydantic team.
 
 
 
-
-In the context of a web application or API built with FastAPI, 
-
-![alt text](image.png)
-
 "http server," "client," and "server" refer to distinct roles within the client-server architecture. A client initiates a request, a server receives and processes it, and FastAPI is the framework that handles the server-side logic. HTTPS, a secure version of HTTP, is often used, with a TLS Termination Proxy handling encryption/decryption. 
 
 **HTTP Methods:**
