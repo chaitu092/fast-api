@@ -1,4 +1,4 @@
-from pydantic import BaseModel, EmailStr, model_validator, AnyUrl
+from pydantic import BaseModel, EmailStr, AnyUrl, computed_field
 from typing import Dict, List
 
 
@@ -7,6 +7,7 @@ class Patient(BaseModel):
     email: EmailStr
     age: int
     weight: float
+    height: float
     married: bool
     gender: bool
     allergies: List[str]
@@ -14,13 +15,14 @@ class Patient(BaseModel):
     linkendin_url: AnyUrl
     about: str
 
-    @model_validator(mode="after")  # model_validator will validate all fields
-    @classmethod
-    def validate_emergency_contact(cls, model):
-
-        if model.age > 60 and "emergency" not in model.contact_details:
-            raise ValueError("Emergency contact is required for patients above 60")
-        return model
+    @computed_field  # this is a computed field which is not stored in the database, calculated on the fly (derived value)
+    @property
+    def calculate_bmi(self) -> float:
+        """
+        Calculate the BMI of the patient.
+        """
+        bmi = self.weight / (self.height**2)
+        return round(bmi, 2)
 
 
 def update_patient_data(patient: Patient):
@@ -28,6 +30,8 @@ def update_patient_data(patient: Patient):
     print(patient.name)
     print(patient.age)
     print(patient.weight)
+    print(patient.height)
+    print("BMI:", patient.calculate_bmi)
     print(patient.married)
     print(patient.gender)
     print(patient.allergies)
@@ -41,7 +45,8 @@ def update_patient_data(patient: Patient):
 patient_info = {
     "name": "John Doe",
     "age": "69",
-    "weight": 70.99,
+    "weight": 75.2,
+    "height": 1.72,
     "married": True,
     "gender": True,
     "allergies": ["pollen", "dust"],
