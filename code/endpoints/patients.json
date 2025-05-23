@@ -48,5 +48,15 @@
         "weight": 75,
         "bmi": 31.22,
         "verdict": "Obese"
+    },
+    "P006": {
+        "name": "Sai Chaitanya",
+        "city": "Hyderabad",
+        "age": 28,
+        "gender": "male",
+        "height": 1.7,
+        "weight": 74.0,
+        "calculate_bmi": 25.61,
+        "verdict": "Overweight"
     }
 }
