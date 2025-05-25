@@ -2,6 +2,7 @@
 
 Fast api sever URL for this project - [patient-overview](http://127.0.0.1:8000/docs)
 
+![Patient Management](image.png)
 FastAPI is a modern, high performance web framework for building APIs with Python.
 
 # Starlette
