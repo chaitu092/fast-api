@@ -128,7 +128,7 @@ class UserInput(BaseModel):
         Calculate the BMI of the patient.
         """
         bmi = self.weight / (self.height**2)
-        return round(bmi, 2)
+        return bmi
 
     @computed_field
     @property
@@ -164,11 +164,11 @@ class UserInput(BaseModel):
     @property
     def city_tier(self) -> int:
         if self.city in tier_1_cities:
-            return 1
+            return "tier_1"
         elif self.city in tier_2_cities:
-            return 2
+            return "tier_2"
         else:
-            return 3
+            return "tier_3"
 
 
 @app.post("/predict")
