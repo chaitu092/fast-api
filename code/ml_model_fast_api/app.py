@@ -9,6 +9,9 @@ import pickle
 with open("model.pkl", "rb") as f:
     model = pickle.load(f)
 
+# Create the FastAPI app
+app = FastAPI()
+
 tier_1_cities = [
     "Mumbai",
     "Delhi",
@@ -69,8 +72,6 @@ tier_2_cities = [
     "Asansol",
     "Siliguri",
 ]
-# Create the FastAPI app
-app = FastAPI()
 
 
 # pydantic model to validate the input data
@@ -162,7 +163,7 @@ class UserInput(BaseModel):
 
     @computed_field
     @property
-    def city_tier(self) -> int:
+    def city_tier(self) -> str:
         if self.city in tier_1_cities:
             return "tier_1"
         elif self.city in tier_2_cities:
